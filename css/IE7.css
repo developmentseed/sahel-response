@@ -1,0 +1,24 @@
+input, textarea, select {
+  display: inline !important;
+  zoom:1;
+  }
+
+.category ul li {
+  display: inline !important;
+  zoom:1;
+  }
+
+#attribution .mapbox-logo {
+  display: inline !important;
+  zoom:1;
+}
+
+#facebook {
+  display:inline !important;
+  zoom:1;
+}
+
+a.logo {
+  display: inline !important;
+  zoom:1;
+}

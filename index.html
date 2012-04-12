@@ -1,0 +1,170 @@
+---
+title: Sahel Food Crisis
+layout: default
+---
+  
+  <div id='map-bg'></div>
+	<div id='map'></div>
+	<div id='sidebar' class='active'>
+	  <div class='content'>
+			<div class='panel story'>
+				<p>Below-average rains began in late 2011 and resulted in <a id='ithaca.sahel-ithaca-remote-vegrowth5km-apr-9-2012,devseed.sahel-westafrica-borders-land' class='regional2' href='#'>drought conditions</a> across the Sahel early in 2012. Based on poor vegetation growth, higher food prices, poor crop yields, and regional violence, there are predictions of widespread <a id='fews-net.sahel-fewsnet-food-security-aprjune-2012' class='regional2' href='#'>food insecurity</a> throughout the region - with a particular focus on Mauritania, Mali, Burkina Faso, Niger, and Chad. In areas where food insecurity and malnutrition are already chronic, there are predictions that <a id='fews-net.sahel-fewsnet-foodsecurity-julsept-2012' class='regional2' href='#'>food insecurity will grow</a> as populations try to cope with the continuing drought conditions. According to the UN, over <a id='fews-net.sahel-fewsnet-foodsecurity-julsept-2012,devseed.sahel-population-atrisk-largetext' class='regional2' href='#'>15 million people</a> are at risk.</p>
+				<p class='explore explore-data'><a href='#'>Access the data</a></p>
+			</div>
+			<div class='panel partners active'>
+				<p>Rains only come once a year in the Sahel, last year they were below-average. Over 15 million people are at risk for food insecurity. In an effort to respond to early warnings, this tool is a collaboration to strengthen the data sharing in the region.</p>
+				<p class='explore explore-story'><a href='#'>Explore the data</a></p>
+				<p class='explore'><a class='about-link' href='#'>About the site</a></p>
+				<div class='logo-container'>
+				  <a class='logo wfp' href='http://www.wfp.org/'>WFP</a>
+				  <a class='logo wb' href='http://www.worldbank.org/'>World Bank</a>
+				  <a class='logo ithaca' href='http://ithacaweb.org/'>ITHACA</a>
+				  <a class='logo fao' href='http://www.fao.org/'>FAO</a>
+				  <a class='logo gfdrr' href='http://www.gfdrr.org/'>GFDRR</a>
+				  <a class='logo fews' href='http://www.fews.net'>FEWS NET</a>
+				  <a class='logo unocha' href='http://www.unocha.org/'>UNOCHA</a>
+				  <a class='logo ds' href='http://www.developmentseed.org/'>DevSeed</a>
+				  <a class='logo servir' href='http://www.nasa.gov/mission_pages/servir/index.html'>SERVIR</a>
+				</div>
+			</div>
+			<div class='panel data'>
+				<div class='filter'>
+				  <ul>
+				    <li class='filter-geo category'>
+				      <ul>
+				        <li class='cat-name'>Geography</li>
+						    <li><a href='#' id='regional'>Regional</a></li>
+		            <li><a href='#' id='burkina'>Burkina Faso</a></li>
+		            <li><a href='#' id='chad'>Chad</a></li>
+		            <li><a href='#' id='mali'>Mali</a></li>
+		            <li><a href='#' id='mauritania'>Mauritania</a></li>
+		            <li><a href='#' id='niger'>Niger</a></li>
+	            </ul>
+	          </li>
+            <li class='filter-cat category'>
+				      <ul>
+				        <li class='cat-name'>Category</li>
+						    <li><a href='#' id='food'>Food Security</a></li>
+		            <li><a href='#' id='logistics'>Logistics</a></li>
+		            <li><a href='#' id='health'>Health</a></li>
+		            <li><a href='#' id='remote'>Remote Sensing</a></li>
+		            <li><a href='#' id='operations'>Operations</a></li>
+	            </ul>
+	          </li>
+	          <li class='filter-part category'>
+				      <ul>
+				        <li class='cat-name'>Partner</li>
+		            <li><a href='#' id='fews'>FEWS NET</a></li>
+		            <li><a href='#' id='unocha'>UNOCHA</a></li>
+		            <li><a href='#' id='fao'>FAO</a></li>
+		            <li><a href='#' id='wfp'>WFP</a></li>
+		            <li><a href='#' id='ithaca'>ITHACA</a></li>
+	            </ul>
+	          </li>
+          </ul>
+				</div>
+				<span class='explain'>
+				  Filter available layers by clicking the desired values above. Turn on, turn off, and rearrange layers below.
+				</span>
+				<div class='datalist'>
+					<div id='onlayers'>
+					  <ul id='sortable'>
+					  </ul>
+					</div>
+					<div id='offlayers'>
+					  <ul id='layerlist'>
+					  
+					    {% for dataset in site.categories.data %}
+					    
+					    <li class='{{dataset.geography}} {{dataset.partner}} {{dataset.cat}} {{dataset.year}}'>
+					      <div class='layer-container'>
+					        <a class='layer-link' id='{{dataset.layer}}' href='#'>{{dataset.title}}</a>
+					        <a class='layer-arrow' href='#'></a>
+					      </div>
+					      <div class='detail'>
+					        <ul>
+					          <li class='clearfix'>
+					            <div class='detail-name dl'>Download</div>
+					            <div class='downloads clearfix detail-content'>
+					              {% for download in dataset.downloads %}
+	                      <a href='{{download.link}}' class='download download-{{download.type}} clearfix'>
+	                        <span class='icon {{download.type}}'>{{download.type | capitalize}}</span>
+	                        <span class='button black'>{{download.type | capitalize}}</span>
+	                      </a>
+	                      {% endfor %}
+	                      
+					            </div>
+					          </li>
+					          <li class='clearfix'>
+					            <div class='detail-name'>Description</div><div class='detail-content'>{{dataset.description | markdownify}}</div>
+					          </li>
+					          <li class='clearfix'>
+					            <div class='detail-name'>Last Updated</div><div class='detail-content'>{{dataset.updated}}</div>
+					          </li>
+					          <li class='clearfix'>
+					            <div class='detail-name'>Source</div><div class='detail-bottom'>{{dataset.source | markdownify}}</div>
+					            <div class='detail-name'>License</div><div class='detail-bottom'>{{dataset.license}}</div>
+					          </li>
+					        </ul>
+					      </div>
+					    </li>
+					      
+					      {% endfor %}
+					  
+					  </ul>
+					</div>
+				</div>
+				<div class='codes clearfix'>
+				  <div class='data-embed-code'>
+            <span class='code-label'>Embed:</span>
+            <textarea class='embed-code' readonly='' wrap='off' rows='1'></textarea>
+          </div>
+          <div class='data-api-code'>
+            <span class='code-label'>API:</span>
+            <textarea class='api-code' readonly='' wrap='off' rows='1'></textarea>
+          </div>
+				</div>
+			</div>
+		</div>
+		
+		<div class='mainheader'>
+		  <h1>Sahel Food <span>Crisis</span></h1>
+		</div>
+		<ul class='mainmenu'>
+			<li class='first'><a class='active' id='partners' href='#'>Partnership</a></li>
+			<li class='second'><a id='story' href='#'>Understand the Crisis</a></li>
+			<li class='third'><a id='data' href='#'>Access the Data</a></li>
+		</ul>
+		<a class='icon about' href='#'>About</a>
+	  <a class='icon close' href='#'>Close</a>
+	</div>
+	<a class='pull-tab icon' href='#'>Open</a>
+	
+	<a href='#' class='share'>Share +</a>
+	<div class='share-modal' style='display:none;'>
+		<div class='share-content'>
+		  <h3>Share this map</h3>
+		  <p>
+		    <a id='facebook' target='_blank'>Facebook</a>
+		    <a id='twitter' target='_blank'>Twitter</a>
+		  </p>
+		  <strong>Get the embed code</strong><br><small>Copy and paste this HTML into your website or blog.</small>
+		  <div id='share-embed-field'><textarea id='share-embed-code' rows='4' readonly></textarea>
+		  </div>
+		  <a href='#' class='icon share-close'>Close</a>
+		</div>
+	</div>
+	
+	<div class='about-modal' style='display:none;'>
+		<div class='about-content'>
+		  <h3>About the Site</h3>
+		  <p>
+		  </p>
+		  <a href='#' class='icon about-close'>Close</a>
+		</div>
+	</div>
+	
+	<div id="attribution">
+    <a href='http://mapbox.com' class='mapbox-logo'>MapBox</a>
+    Maps designed in <a href="http://www.tilemill.com" target="_blank">TileMill</a>. Data &copy; <a href="http://www.openstreetmap.org/">OpenStreetMap</a> (and) contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>.
+  </div>
