@@ -862,9 +862,9 @@ a.pull-tab {
   .share-modal .share-content {
     position:absolute;
     display:block;
-    right:50%;
-    top:50%;
-    margin:-210px -180px 0px 0px;
+    left:50%;
+    top:100px;
+    margin:0 0 0 -160px;
     padding:19px;
     width:320px;
     height:215px;
