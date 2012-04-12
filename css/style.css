@@ -399,21 +399,33 @@ p.explore.explore-data a {
 .datalist a.layer-arrow {
   padding: 0;
   position: absolute;
-  top: 4px;
-  right: 10px;
-  width: 16px;
-  height: 16px;
-  background: transparent url(../images/sprite.png) no-repeat -477px -117px;
+  top: 0;
+  right: 0;
+  width: 45px;
+  height: 24px;
+  background: transparent url(../images/sprite.png) no-repeat -450px -113px;
   z-index: 10;
+  font-size: 10px;
+  color: #666;
+  line-height: 22px;
+  }
+.datalist a.layer-arrow:hover {
+  color: #999;
   }
 .datalist a.layer-arrow.active {
-  background-position: -477px -147px;
+  background-position: -450px -143px;
+  color: #999;
   }
 .datalist a.layer-arrow.dark {
-  background-position: -477px -177px;
+  background-position: -450px -173px;
+  color: #484848;
+  }
+.datalist a.layer-arrow.dark:hover {
+  color: #222;
   }
 .datalist a.layer-arrow.dark.active {
-  background-position: -477px -207px;
+  background-position: -450px -203px;
+  color: #222;
   }
   
 /*-----------------------------------
@@ -777,7 +789,6 @@ a.share:active {
   z-index: 1000;
   font-size: 11px;
   color: #999;
-  vertical-align: bottom;
   -moz-transition: left 0.5s ease;
   -o-transition: left 0.5s ease;
   -webkit-transition: left 0.5s ease;
@@ -788,7 +799,7 @@ a.share:active {
   width: 60px;
   height: 20px;
   background: url(../images/sprite.png) 0px 2px no-repeat;
-  text-indent: -999px;
+  vertical-align: middle;
   }
 #attribution a {
   color: #777;
