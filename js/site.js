@@ -110,10 +110,10 @@ $(function() {
 	    $('#sidebar ul.mainmenu li.third a').css('width','185px');
 	    $('#sidebar ul.mainmenu li.second a').css('width','251px');
 	    $('#attribution').css('left','650px');
-	    layer = 'fews-net.sahel-fewsnet-food-security-aprjune-2012';
-	    $('.datalist a#fews-net\\.sahel-fewsnet-food-security-aprjune-2012').addClass('active');
-	    $('.datalist a#fews-net\\.sahel-fewsnet-food-security-aprjune-2012').parent().parent().prependTo('#sortable');
-	    $('.datalist a#fews-net\\.sahel-fewsnet-food-security-aprjune-2012').next().addClass('dark');
+	    layer = 'fews-net.sahel-fewsnet-foodsecurity-apriljune-2012';
+	    $('.datalist a#fews-net\\.sahel-fewsnet-foodsecurity-apriljune-2012').addClass('active');
+	    $('.datalist a#fews-net\\.sahel-fewsnet-foodsecurity-apriljune-2012').parent().parent().prependTo('#sortable');
+	    $('.datalist a#fews-net\\.sahel-fewsnet-foodsecurity-apriljune-2012').next().addClass('dark');
 	    easeIt(15, -1, 5);
 	    updateEmbedApi();
 	    refreshMap();
