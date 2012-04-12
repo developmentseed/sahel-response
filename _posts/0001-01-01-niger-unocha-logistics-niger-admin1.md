@@ -15,7 +15,7 @@ updated: 3/28/2012
 description: This layer depicts the first level administrative borders for Niger. Data obtained from the [UN Office for the Coordination of Humanitarian Affairs (UN OCHA)](http://www.unocha.org/)
 downloads:
     - type: shapefile
-      link: data/raw_files/ocha-niger-admin1.zip
+      link: http://dl.dropbox.com/u/72717685/ocha-niger-admin1.zip
     - type: sqlite
-      link: data/raw_files/ocha-niger-admin1.sqlite.zip
+      link: http://dl.dropbox.com/u/72717685/ocha-niger-admin1.sqlite.zip
 ---

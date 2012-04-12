@@ -15,7 +15,7 @@ updated: 3/28/12
 description: This layer depicts the locations of World Food Programme operational warehouses in the Sahel region. Data was obtained from the WFP Spatial Data Infrastructure (SDI).  
 downloads:
     - type: shapefile
-      link: data/raw_files/wfp-warehouses-sahel-2012.zip
+      link: http://dl.dropbox.com/u/72717685/wfp-warehouses-sahel-2012.zip
     - type: sqlite
-      link: data/raw_files/wfp-warehouses-sahel-2012.sqlite.zip
+      link: http://dl.dropbox.com/u/72717685/wfp-warehouses-sahel-2012.sqlite.zip
 ---

@@ -15,7 +15,7 @@ updated: 3/28/2012
 description: This layer depicts population by the second administrative level for Chad. Data obtained from the [UN Office for the Coordination of Humanitarian Affairs (UN OCHA)](http://www.unocha.org/)
 downloads:
     - type: shapefile
-      link: data/raw_files/ocha-chad-admin2-population.zip
+      link: http://dl.dropbox.com/u/72717685/ocha-chad-admin2-population.zip
     - type: sqlite
-      link: data/raw_files/ocha-chad-admin2-population.sqlite.zip
+      link: http://dl.dropbox.com/u/72717685/ocha-chad-admin2-population.sqlite.zip
 ---

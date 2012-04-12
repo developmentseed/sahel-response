@@ -15,7 +15,7 @@ updated: 3/28/12
 description: This layer depicts populated places in the Sahel region. Data obtained from [ITHACA](http://www.ithacaweb.org/maps/).
 downloads:
     - type: shapefile
-      link: data/raw_files/ithaca-geonames-sahel-2012.zip
+      link: http://dl.dropbox.com/u/72717685/ithaca-geonames-sahel-2012.zip
     - type: sqlite
-      link: data/raw_files/ithaca-geonames-sahel-2012.sqlite.zip
+      link: http://dl.dropbox.com/u/72717685/ithaca-geonames-sahel-2012.sqlite.zip
 ---

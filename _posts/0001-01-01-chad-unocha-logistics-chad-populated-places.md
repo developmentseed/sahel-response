@@ -15,7 +15,7 @@ updated: 3/28/2012
 description: This layer depicts populated places in Chad. Data obtained from the [UN Office for the Coordination of Humanitarian Affairs (UN OCHA)](http://www.unocha.org/)
 downloads:
     - type: shapefile
-      link: data/raw_files/ocha-chad-populatedplaces.zip
+      link: http://dl.dropbox.com/u/72717685/ocha-chad-populatedplaces.zip
     - type: sqlite
-      link: data/raw_files/ocha-chad-populatedplaces.sqlite.zip
+      link: http://dl.dropbox.com/u/72717685/ocha-chad-populatedplaces.sqlite.zip
 ---

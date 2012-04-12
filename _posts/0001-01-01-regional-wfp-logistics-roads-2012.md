@@ -15,7 +15,7 @@ updated: 3/28/12
 description: This layer depicts road data from the World Food Programme in the Sahel region. Data was obtained from the [UN Spatial Data Infrastructure for Transport (SDI-T)](http://www.logcluster.org/tools/mapcentre/unsdi).   
 downloads:
     - type: shapefile
-      link: data/raw_files/wfp-roads-sahel-2012.zip
+      link: http://dl.dropbox.com/u/72717685/wfp-roads-sahel-2012.zip
     - type: sqlite
-      link: data/raw_files/wfp-roads-sahel-2012.sqlite.zip
+      link: http://dl.dropbox.com/u/72717685/wfp-roads-sahel-2012.sqlite.zip
 ---
