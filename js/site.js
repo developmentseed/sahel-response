@@ -18,24 +18,24 @@ $(function() {
 		embedUrl, apiUrl, center,
 		curTop,
 		onScroll, offScroll,
+		tilejson, newTilejson, baseTilejson,
 		mm = com.modestmaps,
 		basemap = 'gfdrr-labs.map-44bl16ot',
 		layer = 'fews-net.sahel-fewsnet-foodsecurity-apriljune-2012',
 		urlBase = 'http://api.tiles.mapbox.com/v3/',
 		url = urlBase + basemap + ',' + layer + '.jsonp';
-		
+	
+	if (!badIE) {
 	// Build background map
-	wax.tilejson(urlBase + basemap + '.jsonp', function(tilejson) {
+	wax.tilejson(urlBase + basemap + '.jsonp', function(baseTilejson) {
 		b = new mm.Map('map-bg',
-		new wax.mm.connector(tilejson));
+		new wax.mm.connector(baseTilejson));
 		b.setCenterZoom(new mm.Location(15, -1), 4);
 	});
+	}
 	
 	// Build map
 	wax.tilejson(url, function(tilejson) {
-		
-		tilejson.minzoom = 4;
-		tilejson.maxzoom = 8;
 		
 		m = new mm.Map('map',
 		new wax.mm.connector(tilejson));
@@ -48,15 +48,18 @@ $(function() {
 		legend = wax.mm.legend(m, tilejson).appendTo(m.parent);
 		wax.mm.zoomer(m, tilejson).appendTo(m.parent);
 		m.setCenterZoom(new mm.Location(15, -1), 4);
+		m.setZoomRange(4, 10);
 		
 		var bw = wax.mm.bwdetect(m, {
           auto: true,
           png: '.png64?'
         });
 		
+		if (!badIE) {
 		m.addCallback("drawn", function (m) {
 		  b.setCenterZoom(m.getCenter(), m.getZoom());
 		});
+		}
 	});
 	
 	// Update layer order
@@ -84,13 +87,12 @@ $(function() {
 			url = urlBase + basemap + ',' + layer + '.jsonp';
 		}
 		wax.tilejson(url, function(newTileJson) {
-			newTileJson.minzoom = 4;
-			newTileJson.maxzoom = 8;
 			m.setLayerAt(0, new wax.mm.connector(newTileJson));
 			$('.wax-tooltip').remove();
 			interaction.tilejson(newTileJson);
 			$('.wax-legend').remove();
 			legend = wax.mm.legend(m, newTileJson).appendTo(m.parent);
+			m.setZoomRange(4, 10);
 		});
 	}
 	
@@ -156,9 +158,11 @@ $(function() {
 	    }
 	    geoSelector += 1;
 	  }
-	  setTimeout(function() {
-	  	offScroll.refresh();
-	  }, 100);
+	  if(isTouchDevice()) {
+		  setTimeout(function() {
+		  	offScroll.refresh();
+		  }, 100);
+	  }
 	});
 	$('.filter-part li a').click(function(e) {
 	  e.preventDefault();
@@ -180,9 +184,11 @@ $(function() {
 	    }
 	    partSelector += 1;
 	  }
-	  setTimeout(function() {
-	  	offScroll.refresh();
-	  }, 100);
+	  if(isTouchDevice()) {
+		  setTimeout(function() {
+		  	offScroll.refresh();
+		  }, 100);
+	  }
 	});
 	$('.filter-cat li a').click(function(e) {
 	  e.preventDefault();
@@ -204,9 +210,11 @@ $(function() {
 	    }
 	    catSelector += 1;
 	  }
-	  setTimeout(function() {
-	  	offScroll.refresh();
-	  }, 100);
+	  if(isTouchDevice()) {
+		  setTimeout(function() {
+		  	offScroll.refresh();
+		  }, 100);
+	  }
 	});
 	$('.filter-year li a').click(function(e) {
 	  e.preventDefault();
@@ -228,9 +236,11 @@ $(function() {
 	    }
 	    yearSelector += 1;
 	  }
-	  setTimeout(function() {
-	  	offScroll.refresh();
-	  }, 100);
+	  if(isTouchDevice()) {
+		  setTimeout(function() {
+		  	offScroll.refresh();
+		  }, 100);
+	  }
 	});
 	
 	// Draggable data list
@@ -410,7 +420,6 @@ $(function() {
   // Share
     $('a.share').click(function(e){
         e.preventDefault();
-        if(isTouchDevice()) {console.log('share');}
 
         var twitter = 'http://twitter.com/intent/tweet?status=' + 
         'Sahel Food Crisis ' + encodeURIComponent(window.location);
