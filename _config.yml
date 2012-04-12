@@ -2,8 +2,6 @@ auto: true
 server: true
 exclude:
   - README.md
-  - design_source  
-  - data
 markdown: rdiscount
 rdiscount:
   extensions: [smart]
