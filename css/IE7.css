@@ -1,24 +1,48 @@
+#sidebar .panel p a {
+  color:#fff;
+  }
+
 input, textarea, select {
   display: inline !important;
   zoom:1;
   }
 
+textarea.embed-code, textarea.api-code {
+  width:100px;
+  }
+
+textarea.ie-resize {
+  width:485px;
+  }
+
 .category ul li {
   display: inline !important;
   zoom:1;
+  margin-bottom:-16px !impoartant;
+  }
+  
+.category ul li a {
+  color: #666;
   }
 
+.panel.data .explain {
+  margin-top:30px;
+  }
+
+
 #attribution .mapbox-logo {
-  display: inline !important;
-  zoom:1;
-}
+  position: absolute;
+  vertical-align: bottom;
+  display:inline !important;
+  zoom:1
+  }
 
 #facebook {
   display:inline !important;
   zoom:1;
-}
+  }
 
 a.logo {
   display: inline !important;
   zoom:1;
-}
+  }
