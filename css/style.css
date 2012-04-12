@@ -249,7 +249,6 @@ a.logo {
   height: 50px;
   width: 50px;
   background: url(../images/sprite.png) 0 -20px no-repeat;
-  text-indent: -999px;
   margin: 5px;
   }
 .logo.wfp {
