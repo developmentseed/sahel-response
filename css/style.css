@@ -536,7 +536,7 @@ a.download {
     font-size: inherit !important;
     }
 .downloads .icon {
-  background: transparent url(../images/sprite.png) no-repeat 0 -50px;
+  background: transparent url(../images/sprite.png) no-repeat -180px -185px;
   display: block;
   width: 36px;
   height: 50px;
