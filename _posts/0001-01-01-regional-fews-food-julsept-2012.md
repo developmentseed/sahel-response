@@ -6,7 +6,7 @@ geography: regional
 partner: fews
 cat: food
 year: 2012
-layer: fews-net.sahel-fewsnet-food-security-julsept-2012
+layer: fews-net.sahel-fewsnet-foodsecurity-julysept-2012
 api:
 embed:
 source: FEWS NET  
