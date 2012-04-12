@@ -582,6 +582,7 @@ a.download:visited,
   width: 40px;
   margin-right: 5px;
   line-height: 22px;
+  float:left;
   }
 textarea.embed-code, textarea.api-code {
   background: #ccc;
@@ -801,6 +802,7 @@ a.share:active {
   background: url(../images/sprite.png) 0px 2px no-repeat;
   vertical-align: middle;
   }
+  
 #attribution a {
   color: #777;
   }
