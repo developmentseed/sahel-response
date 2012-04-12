@@ -20,7 +20,7 @@ $(function() {
 		onScroll, offScroll,
 		mm = com.modestmaps,
 		basemap = 'gfdrr-labs.map-44bl16ot',
-		layer = 'fews-net.sahel-fewsnet-food-security-aprjune-2012',
+		layer = 'fews-net.sahel-fewsnet-foodsecurity-aprjune-2012',
 		urlBase = 'http://api.tiles.mapbox.com/v3/',
 		url = urlBase + basemap + ',' + layer + '.jsonp';
 		
