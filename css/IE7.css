@@ -22,3 +22,7 @@ a.logo {
   display: inline !important;
   zoom:1;
 }
+
+.share-modal, .about-modal {
+  background: url(../images/dark-bg.png) repeat 0 0;
+}

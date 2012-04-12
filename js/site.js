@@ -431,8 +431,10 @@ $(function() {
         
         updateEmbedApi();
         $('.share-modal').css('display', 'block');
-        $('#share-embed-code')[0].tabindex = 0;
-        $('#share-embed-code')[0].select();
+        if (!badIE) {
+          $('#share-embed-code')[0].tabindex = 0;
+          $('#share-embed-code')[0].select();
+        }
     });
     
     // About
