@@ -480,13 +480,13 @@ p.explore.explore-data a {
 	line-height: inherit !important;
 	margin: 0;
 	}
-.datalist .detail p a {
+.datalist .detail p a, .about-content p a {
   background: none !important;
   padding: 0 !important;
   display: inline;
   color: #8DA286 !important;
   }
-.no-touch .datalist .detail p a:hover {
+.no-touch .datalist .detail p a:hover, .about-content p a:hover {
   text-decoration: underline;
   }
 .datalist .detail ul {
