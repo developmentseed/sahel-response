@@ -609,6 +609,7 @@ a.download {
   width: 40px;
   margin-right: 5px;
   line-height: 22px;
+  float:left;
   }
 textarea.embed-code, textarea.api-code {
   background: #ccc;
@@ -840,7 +841,6 @@ a.pull-tab {
   width: 60px;
   height: 20px;
   background: url(../images/sprite.png) 0px 2px no-repeat;
-  text-indent: -999px;
 }
 #attribution a {
   color: #777;

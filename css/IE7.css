@@ -2,9 +2,21 @@
   color:#fff;
   }
 
+.wax-legend .measure-lgd-horiz {
+  height:20px;
+  }
+  
+.wax-legend .measure-lgd-horiz .good {
+  margin-right:70px !important;
+  }
+
 input, textarea, select {
   display: inline !important;
   zoom:1;
+  }
+
+.code-label {
+  float:left;
   }
 
 textarea.embed-code, textarea.api-code {
@@ -30,11 +42,13 @@ textarea.ie-resize {
   }
 
 
+#layerlist {
+  overflow-x:hidden;
+  }
+
 #attribution .mapbox-logo {
-  position: absolute;
-  vertical-align: bottom;
   display:inline !important;
-  zoom:1
+  zoom:1;
   }
 
 #facebook {
