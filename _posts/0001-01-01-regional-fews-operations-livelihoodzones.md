@@ -12,7 +12,7 @@ embed:
 source: FEWS NET 
 license: Public Domain
 updated: 3/28/12
-description: This layer depicts the dekadal (10-day) rainfall estimate (RFE) based on RFE 2.0 algorithm and interpolation method produced by National Oceanic and Atmospheric Administration's (NOAA) Climate Prediction Center. Daily rainfall estimates are summed to produce dekadal totals. Additional information about RFE 2.0 can be found on the [African Rainfall Estimates data page](http://www.cpc.ncep.noaa.gov/products/fews/rfe.shtml). 
+description: This layer depicts the livelihood zones in the Sahel region. It shows  homogenous zones within which people share broadly the same pattern of livelihood, including options for obtaining food and income and market opportunities. Additional information can be found on the [Livelihoods data page](http://www.fews.net/pages/livelihoods-products.aspx?b=n). 
 downloads:
     - type: shapefile
       link: http://dl.dropbox.com/u/72717685/fewsnet-livelihoods-sahel.zip
