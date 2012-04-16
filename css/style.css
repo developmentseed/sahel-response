@@ -371,7 +371,7 @@ p.explore.explore-data a {
   text-decoration: none;
   color: #aaa;
   font-size: 13px;
-  padding: 3px 15px;
+  padding: 3px 10px 3px 20px;
   }
 .datalist a.layer-link.active {
   background: #74825D;
@@ -379,11 +379,11 @@ p.explore.explore-data a {
   border-bottom: 1px solid #333;
   }
 .no-touch .datalist a.layer-link:hover {
-  background: #666;
+  background: #666 url('../images/sprite.png') no-repeat -475px -323px;;
   color: #fff;
   }
 .no-touch .datalist a.layer-link.active:hover {
-  background: #74825D;
+  background: #74825D url('../images/sprite.png') no-repeat -475px -283px;
   cursor: hand;
   cursor: grab;
   cursor: -moz-grab;

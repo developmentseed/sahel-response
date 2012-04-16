@@ -38,7 +38,7 @@ $(function() {
     wax.tilejson(url, function(tilejson) {
         
         m = new mm.Map('map',
-        new wax.mm.connector(tilejson));
+        	new wax.mm.connector(tilejson));
         
         interaction = wax.mm.interaction()
             .map(m)
