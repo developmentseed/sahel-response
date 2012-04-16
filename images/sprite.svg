@@ -224,10 +224,10 @@
     <g
        id="g3300"
        transform="matrix(0.57500076,-0.57500076,0.57500076,0.57500076,-120.10906,834.25386)"
-       style="fill:#74825d;fill-opacity:1">
+       style="fill:#333333;fill-opacity:1">
       <rect
          transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"
-         style="color:#000000;fill:#74825d;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.30000000999999998;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         style="color:#000000;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.30000000999999998;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
          id="rect3302"
          width="1.8446239"
          height="12.297493"
@@ -240,22 +240,22 @@
          height="12.297493"
          width="1.8446239"
          id="rect3304"
-         style="color:#000000;fill:#74825d;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.30000000999999998;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+         style="color:#000000;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.30000000999999998;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
     </g>
     <g
        transform="translate(5.0000009,275.00002)"
        id="g3306"
-       style="fill:#de152d;fill-opacity:1">
+       style="fill:#333333;fill-opacity:1">
       <rect
          y="59.161175"
          x="743.21008"
          height="12.297493"
          width="1.8446239"
          id="rect3308"
-         style="color:#000000;fill:#de152d;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.30000000999999998;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         style="color:#000000;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.30000000999999998;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
          transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)" />
       <rect
-         style="color:#000000;fill:#de152d;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.30000000999999998;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         style="color:#000000;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.30000000999999998;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
          id="rect3310"
          width="1.8446239"
          height="12.297493"
