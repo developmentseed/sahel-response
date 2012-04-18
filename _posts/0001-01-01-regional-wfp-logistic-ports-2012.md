@@ -9,7 +9,7 @@ year: 2012
 layer: wfp-odep.sahel-wfp-ports-mar-28-2012
 api:
 embed:
-source: WFP
+source: <a href="http://wfp.org">WFP</a>
 license: Public Domain
 updated: 3/28/12
 description: This layer depicts the locations of World Food Programme operational ports in the Sahel region. Data was obtained from the [UN Spatial Data Infrastructure for Transport (SDI-T)](http://www.logcluster.org/tools/mapcentre/unsdi).     

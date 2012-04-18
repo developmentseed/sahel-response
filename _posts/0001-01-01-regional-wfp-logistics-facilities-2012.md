@@ -9,7 +9,7 @@ year: 2012
 layer: wfp-odep.sahel-wfp-facilities-mar-28-2012
 api:
 embed:
-source: WFP  
+source: <a href="http://wfp.org">WFP</a>  
 license: Public Domain
 updated: 3/28/12
 description: This layer depicts the locations of World Food Programme operational facilities, including field offices, sub offices, and country headquarters, in the Sahel region. Data was obtained from the WFP Spatial Data Infrastructure (SDI). 
