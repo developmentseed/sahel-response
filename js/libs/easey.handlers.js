@@ -1,14 +1,9 @@
 (function(context, MM) {
 
-    easey.TouchHandler = function(map, options) {
-        if (map) {
-            this.init(map, options);
-        }
-    };
+    easey.TouchHandler = function() {
+      var handler = {};
 
-    easey.TouchHandler.prototype = {
-
-      init: function(map, options) {
+      handler.init = function(map) {
             var prevT = 0,
                 acceleration = 25.0,
                 speed = null,
@@ -23,8 +18,6 @@
                 oldPoint = null,
                 lastMove = null,
                 lastPinchCenter = null;
-
-            options = options || {};
 
             function animate(t) {
                 var dir = { x: 0, y: 0 };
@@ -61,7 +54,6 @@
                     (touch.identifier == event.touch.identifier);
             }
 
-            
             function updateTouches (e) {
                 for (var i = 0; i < e.touches.length; i += 1) {
                     var t = e.touches[i];
@@ -112,13 +104,10 @@
             MM.addEvent(map.parent, 'touchend',
                 touchEndMachine);
 
-            options = {};
-            options.snapToZoom = options.snapToZoom || true;
-
             prevT = new Date().getTime();
             speed = { x: 0, y: 0 };
             MM.getFrame(animate);
-            
+
             // Handle a tap event - mainly watch for a doubleTap
             function onTap(tap) {
                 if (taps.length &&
@@ -159,7 +148,6 @@
                     touchEndMachine);
             }
 
-            
             // Re-transform the actual map parent's CSS transformation
             function onPanning(touch) {
                 lastMove = +new Date();
@@ -201,7 +189,7 @@
             // When a pinch event ends, round the zoom of the map.
             function onPinched(p) {
                 // TODO: easing
-                if (options.snapToZoom) {
+                if (true) {
                     var z = map.getZoom(), // current zoom
                         tz = Math.round(z);     // target zoom
                     map.zoomByAbout(tz - z, p);
@@ -269,180 +257,201 @@
         }
     };
 
+    easey.DoubleClickHandler = function() {
+        var handler = {},
+            map;
 
-
-    // Handle double clicks, that zoom the map in one zoom level.
-    easey.DoubleClickHandler = function(map) {
-        if (map !== undefined) {
-            this.init(map);
-        }
-    };
-
-    easey.DoubleClickHandler.prototype = {
-
-        init: function(map) {
-            this.map = map;
-            MM.addEvent(map.parent, 'dblclick', this.getDoubleClick());
-        },
-
-        doubleClickHandler: null,
-
-        getDoubleClick: function() {
-
+        function doubleClick(e) {
             // Ensure that this handler is attached once.
-            if (!this.doubleClickHandler) {
-                var theHandler = this;
-                this.doubleClickHandler = function(e) {
-                    var map = theHandler.map,
-                    point = MM.getMousePoint(e, map),
-                    z = map.getZoom() + (e.shiftKey ? -1 : 1);
+            // Get the point on the map that was double-clicked
+            var point = MM.getMousePoint(e, map);
+            z = map.getZoom() + (e.shiftKey ? -1 : 1);
+            // use shift-double-click to zoom out
+            easey().map(map)
+                .to(map.pointCoordinate(MM.getMousePoint(e, map)).zoomTo(z))
+                .path('about').run(100);
+            return MM.cancelEvent(e);
+        }
 
-                    easey.slow(map, {
-                        zoom: z,
-                        about: point,
-                        time: 100
-                    });
+        handler.init = function(x) {
+            map = x;
+            MM.addEvent(map.parent, 'dblclick', doubleClick);
+            return handler;
+        };
 
-                    return MM.cancelEvent(e);
-                };
+        handler.remove = function() {
+            MM.removeEvent(map.parent, 'dblclick', doubleClick);
+        };
+
+        return handler;
+    };
+
+    easey.MouseWheelHandler = function() {
+        var handler = {},
+            map,
+            _zoomDiv,
+            ea = easey(),
+            prevTime,
+            precise = false;
+
+        function mouseWheel(e) {
+            var delta = 0;
+            prevTime = prevTime || new Date().getTime();
+
+            try {
+                _zoomDiv.scrollTop = 1000;
+                _zoomDiv.dispatchEvent(e);
+                delta = 1000 - _zoomDiv.scrollTop;
+            } catch (error) {
+                delta = e.wheelDelta || (-e.detail * 5);
             }
-            return this.doubleClickHandler;
-        }
-    };
 
-    // A handler that allows mouse-wheel zooming - zooming in
-    // when page would scroll up, and out when the page would scroll down.
-    easey.MouseWheelHandler = function(map) {
-        if (map !== undefined) {
-            this.init(map);
-        }
-    };
+            // limit mousewheeling to once every 200ms
+            var timeSince = new Date().getTime() - prevTime;
+            var point = MM.getMousePoint(e, map);
 
-    easey.MouseWheelHandler.prototype = {
-
-        init: function(map) {
-            this.map = map;
-            MM.addEvent(map.parent, 'mousewheel', this.getMouseWheel());
-        },
-
-        mouseWheelHandler: null,
-
-        getMouseWheel: function() {
-            // Ensure that this handler is attached once.
-            if (!this.mouseWheelHandler) {
-                var theHandler = this;
-                var prevTime = new Date().getTime();
-                this.mouseWheelHandler = function(e) {
-
-                    var delta = 0;
-                    if (e.wheelDelta) {
-                        delta = e.wheelDelta;
-                    } else if (e.detail) {
-                        delta = -e.detail;
-                    }
-
-                    var timeSince = new Date().getTime() - prevTime;
-
-                    if (Math.abs(delta) > 0 && (timeSince > 50)) {
-
-                        if (easey.running()) {
-                          easey.set({
-                            time:200,
-                            zoom:z + (delta > 0 ? 1 : -1)
-                          });
-                        } else {
-                          var map = theHandler.map,
-                          point = MM.getMousePoint(e, map),
-                          z = map.getZoom();
-                          easey.slow(map, {
-                              zoom: z + (delta > 0 ? 1 : -1),
-                              about: point,
-                              ease: 'linear',
-                              time:200
-                          });
-                        }
-
-                        prevTime = new Date().getTime();
-                    }
-
-                    // Cancel the event so that the page doesn't scroll
-                    return MM.cancelEvent(e);
-                };
+            if (Math.abs(delta) > 0 && (timeSince > 200) && !precise) {
+                map.zoomByAbout(delta > 0 ? 1 : -1, point);
+                prevTime = new Date().getTime();
+            } else if (precise) {
+                map.zoomByAbout(delta * 0.001, point);
             }
-            return this.mouseWheelHandler;
+            if (!ea.running()) {
+              var point = MM.getMousePoint(e, map),
+                  z = map.getZoom();
+              ea.map(map)
+                .to(map.pointCoordinate(MM.getMousePoint(e, map)).zoomTo(z + (delta > 0 ? 1 : -1)))
+                .path('about').run(200);
+            } else {
+                ea.zoom(ea.to().zoom + (delta > 0 ? 1 : -1));
+            }
+
+            // Cancel the event so that the page doesn't scroll
+            return MM.cancelEvent(e);
         }
+
+        handler.init = function(x) {
+            map = x;
+            _zoomDiv = document.body.appendChild(document.createElement('div'));
+            _zoomDiv.style.cssText = 'visibility:hidden;top:0;height:0;width:0;overflow-y:scroll';
+            var innerDiv = _zoomDiv.appendChild(document.createElement('div'));
+            innerDiv.style.height = '2000px';
+            MM.addEvent(map.parent, 'mousewheel', mouseWheel);
+            return handler;
+        };
+
+        handler.precise = function(x) {
+            if (!arguments.length) return precise;
+            precise = x;
+            return handler;
+        };
+
+        handler.remove = function() {
+            MM.removeEvent(map.parent, 'mousewheel', mouseWheel);
+            _zoomDiv.parentNode.removeChild(_zoomDiv);
+        };
+
+        return handler;
     };
 
-    easey.DragHandler = function() { };
+    easey.DragHandler = function() {
+        var handler = {},
+            map;
 
-    easey.DragHandler.prototype = {
-        init: function(map) {
+        handler.init = function(map) {
             var prevT = 0,
-                acceleration = 25.0,
                 speed = null,
-                drag = 0.10,
-                lastMove = null,
+                drag = 0.15,
                 mouseDownPoint = null,
+                mouseDownTime = 0,
                 mousePoint = null,
-                mouseDownTime = 0;
+                prevMousePoint = null,
+                moveTime = null,
+                prevMoveTime = null,
+                animatedLastPoint = true;
 
             function mouseDown(e) {
+                if (e.shiftKey || e.button == 2) return;
+                MM.addEvent(document, 'mousemove', mouseMove);
+                MM.addEvent(document, 'mouseup', mouseUp);
                 mousePoint = prevMousePoint = MM.getMousePoint(e, map);
+                moveTime = prevMoveTime = +new Date();
+                map.parent.style.cursor = 'move';
                 return MM.cancelEvent(e);
             }
 
             function mouseMove(e) {
                 if (mousePoint) {
-                    prevMousePoint = mousePoint;
+                    if (animatedLastPoint) {
+                        prevMousePoint = mousePoint;
+                        prevMoveTime = moveTime;
+                        animatedLastPoint = false;
+                    }
                     mousePoint = MM.getMousePoint(e, map);
-                    lastMove = +new Date();
+                    moveTime = +new Date();
                     return MM.cancelEvent(e);
                 }
             }
 
             function mouseUp(e) {
+            	MM.removeEvent(document, 'mousemove', mouseMove);
+            	MM.removeEvent(document, 'mouseup', mouseUp);
+                if (+new Date() - prevMoveTime < 50) {
+                    dt = Math.max(1, moveTime - prevMoveTime);
+                    var dir = { x: 0, y: 0 };
+                    dir.x = mousePoint.x - prevMousePoint.x;
+                    dir.y = mousePoint.y - prevMousePoint.y;
+                    speed.x = dir.x / dt;
+                    speed.y = dir.y / dt;
+                } else {
+                    speed.x = 0;
+                    speed.y = 0;
+                }
                 mousePoint = prevMousePoint = null;
+                moveTime = lastMoveTime = null;
+                map.parent.style.cursor = '';
                 return MM.cancelEvent(e);
             }
 
             function animate(t) {
                 var dir = { x: 0, y: 0 };
-                var dt = Math.max(0.001,(t - prevT) / 1000.0);
-                if (mousePoint && prevMousePoint &&
-                    (lastMove > (+new Date() - 50))) {
-                    dir.x = mousePoint.x - prevMousePoint.x;
-                    dir.y = mousePoint.y - prevMousePoint.y;
-                    speed.x = dir.x;
-                    speed.y = dir.y;
+                var dt = Math.max(1, t - prevT);
+                if (mousePoint && prevMousePoint) {
+                    if (!animatedLastPoint) {
+                        dir.x = mousePoint.x - prevMousePoint.x;
+                        dir.y = mousePoint.y - prevMousePoint.y;
+                        map.panBy(dir.x, dir.y);
+                        animatedLastPoint = true;
+                    }
                 } else {
-                    speed.x -= speed.x * drag;
-                    speed.y -= speed.y * drag;
+                    // Rough time based animation accuracy 
+                    // using a linear approximation approach
+                    speed.x *= Math.pow(1 - drag, dt * 60 / 1000);
+                    speed.y *= Math.pow(1 - drag, dt * 60 / 1000);
                     if (Math.abs(speed.x) < 0.001) {
                         speed.x = 0;
                     }
                     if (Math.abs(speed.y) < 0.001) {
                         speed.y = 0;
                     }
-                }
-                if (speed.x || speed.y) {
-                    map.panBy(speed.x, speed.y);
+                    if (speed.x || speed.y) {
+                        map.panBy(speed.x * dt, speed.y * dt);
+                    }
                 }
                 prevT = t;
-                // tick every frame for time-based anim accuracy
                 MM.getFrame(animate);
             }
 
             MM.addEvent(map.parent, 'click', function(e) {
-              map.parent.focus();
+                map.parent.focus();
             });
             MM.addEvent(map.parent, 'mousedown', mouseDown);
-            MM.addEvent(map.parent, 'mousemove', mouseMove);
-            MM.addEvent(map.parent, 'mouseup', mouseUp);
-            // tick every frame for time-based anim
             prevT = new Date().getTime();
             speed = { x: 0, y: 0 };
             MM.getFrame(animate);
-        }
+        };
+
+        return handler;
     };
 
-})(this, com.modestmaps);
+})(this, MM);
