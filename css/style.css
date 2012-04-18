@@ -740,6 +740,9 @@ a.share:active {
   border-radius: 3px;
   line-height: 16px;
   }
+.wax-tooltip .date-legend, .content-item, .source-disclaim-title, .source-disclaim  {
+  color: #fff !important;
+  } 
 .wax-tooltip .arrow {
   position: absolute;
   width: 0;
