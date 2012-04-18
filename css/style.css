@@ -921,7 +921,7 @@ a.share:active {
   position:absolute;
   display:block;
   left:50%;
-  top:100px;
+  top:25px;
   margin:0 0 0 -400px;
   padding:19px;
   width:800px;
@@ -942,4 +942,9 @@ a.share:active {
   width: 30px;
   height: 25px;
   background-position: -465px 0px;
-  }
+  } 
+.about-modal p.about-video {   
+	position:relative;
+	display:block;
+	left:100px;
+}
