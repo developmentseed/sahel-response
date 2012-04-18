@@ -123,11 +123,16 @@ $(function() {
             $('#sidebar ul.mainmenu li.second a').css('width','251px');
             $('#attribution').css('left','650px');
             $('textarea.embed-code, textarea.api-code').addClass('ie-resize');
-            layer = 'fews-net.sahel-fewsnet-foodsecurity-apriljune-2012';
-            $('.datalist a#fews-net\\.sahel-fewsnet-foodsecurity-apriljune-2012').addClass('active');
-            $('.datalist a#fews-net\\.sahel-fewsnet-foodsecurity-apriljune-2012').parent().parent().prependTo('#sortable');
-            $('.datalist a#fews-net\\.sahel-fewsnet-foodsecurity-apriljune-2012').next().addClass('dark');
+            //layer = 'fews-net.sahel-fewsnet-foodsecurity-apriljune-2012';
+            if (!$(this).hasClass('visited')) {
+                $(this).addClass('visited');
+                $('.datalist a#fews-net\\.sahel-fewsnet-foodsecurity-apriljune-2012').addClass('active');
+                $('.datalist a#fews-net\\.sahel-fewsnet-foodsecurity-apriljune-2012').parent().parent().prependTo('#sortable');
+                $('.datalist a#fews-net\\.sahel-fewsnet-foodsecurity-apriljune-2012').next().addClass('dark');
+            }
+            $('#offlayers').css('top',$('#onlayers').height() + 15);
             easeIt(15, -1, 5);
+            updateLayers();
             updateEmbedApi();
             refreshMap();
             if(isTouchDevice()) {
@@ -289,6 +294,9 @@ $(function() {
         } else if 
             ($(this).parent().hasClass('explore-data')) {
             $('a#data').trigger('click');
+        } else if 
+            ($(this).hasClass('about-link')) {
+            return;
         } else {
             $(this).addClass('active');
             layer = this.id;
