@@ -9,7 +9,7 @@ year: 2012
 layer: fews-net.sahel-fewsnet-livelihoods-2012
 api:
 embed:
-source: FEWS NET 
+source: <a href="http://fews.net">FEWS NET</a> 
 license: Public Domain
 updated: 3/28/12
 description: This layer depicts the livelihood zones in the Sahel region. It shows  homogenous zones within which people share broadly the same pattern of livelihood, including options for obtaining food and income and market opportunities. Additional information can be found on the [Livelihoods data page](http://www.fews.net/pages/livelihoods-products.aspx?b=n). 

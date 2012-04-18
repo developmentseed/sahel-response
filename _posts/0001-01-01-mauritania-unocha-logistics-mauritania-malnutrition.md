@@ -9,7 +9,7 @@ year: 2010
 layer: ocha-cod.mauritania-admin1-malnutrition-2010
 api:
 embed:
-source: UNOCHA
+source: <a href="http://unocha.org">UNOCHA</a>
 license: Humanitarian Use
 updated: 3/28/2012
 description: This layer depicts the Global Acute Malnutrition (GAM) rate by first administrative level for Mauritania. Data obtained from the UN Office for the Coordination of Humanitarian Affairs (UN OCHA) [Common and Fundamental Operating Datasets Registry](http://cod.humanitarianresponse.info/). See the [Mauritania](http://cod.humanitarianresponse.info/country-region/Mauritania) registry for the most recent changes.
