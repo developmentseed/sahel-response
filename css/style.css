@@ -287,7 +287,7 @@ p.explore.explore-data a {
   left: 30px;
   }
 .footnotes a {
-  font-size: 12px;
+  font-size: 11px;
   color: #aaa;
   line-height: 14px;
   }
@@ -536,11 +536,14 @@ a.download:visited,
 .downloads span.icon.shapefile, .downloads span.icon.geotiff {
   background-position: -45px -185px;
   }
-.downloads span.icon.geojson {
+.downloads span.icon.geojson, {
   background-position: -90px -185px;
   }
 .downloads span.icon.sqlite {
   background-position: -135px -185px;
+  }
+.downloads span.icon.mbtile {
+  background-position: 0 -250px;
   }
 .button {
   color: #fff;
@@ -943,8 +946,12 @@ a.share:active {
   height: 25px;
   background-position: -465px 0px;
   } 
-.about-modal p.about-video {   
+.about-modal p.about-video {
 	position:relative;
 	display:block;
-	left:100px;
+	width: 95%;
+	text-align: center;
 }
+iframe {
+  border: 1px solid #444;
+  }
