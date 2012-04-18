@@ -38,7 +38,12 @@ $(function() {
     wax.tilejson(url, function(tilejson) {
         
         m = new mm.Map('map',
-        new wax.mm.connector(tilejson));
+            new wax.mm.connector(tilejson), null, [
+                new easey.DragHandler(),
+                new easey.DoubleClickHandler(),
+                new easey.MouseWheelHandler()
+                ]
+            );
         
         interaction = wax.mm.interaction()
             .map(m)
@@ -87,7 +92,12 @@ $(function() {
             url = urlBase + basemap + ',' + layer + '.jsonp';
         }
         wax.tilejson(url, function(newTileJson) {
-            m.setLayerAt(0, new wax.mm.connector(newTileJson));
+            m.setLayerAt(0, new wax.mm.connector(newTileJson, null, [
+                new easey.DragHandler(),
+                new easey.DoubleClickHandler(),
+                new easey.MouseWheelHandler()
+                ])
+            );
             $('.wax-tooltip').remove();
             interaction.tilejson(newTileJson);
             $('.wax-legend').remove();
@@ -260,16 +270,15 @@ $(function() {
     
     // easeIt
     function easeIt(x, y, z, callback) {
-        var options = {
-            location: new mm.Location(x, y),
-            zoom: z || 5,
-            ease: 'linear',
-            time: 1500
-        };
+        var location = new mm.Location(x, y),
+            zoom = z,
+            path =  'screen',
+            time = 1500;
         if (typeof callback === 'function') {
             options.callback = callback;
         }
-        easey.slow(m, options);
+        easey().map(m)
+            .to(m.locationCoordinate({ lat: x, lon: y }).zoomTo(z)).path(path).run(time);
     }
   
     // Story layer switcher
