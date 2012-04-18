@@ -91,8 +91,8 @@ layout: default
                       <div class='detail-name dl'>Download</div>
                       <div class='downloads clearfix detail-content'>
                         {% for download in dataset.downloads %}
-                        <a href='{{download.link}}' class='download download-{{download.type}} clearfix'>
-                          <span class='icon {{download.type}}'>{{download.type | capitalize}}</span>
+                        <a href='{{download.link}}' class='download download-{{download.type | downcase}} clearfix'>
+                          <span class='icon {{download.type | downcase}}'>{{download.type | capitalize}}</span>
                           <span class='button black'>{{download.type | capitalize}}</span>
                         </a>
                         {% endfor %}
