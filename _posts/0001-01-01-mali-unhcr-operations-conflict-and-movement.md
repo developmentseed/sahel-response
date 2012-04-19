@@ -1,5 +1,5 @@
 ---
-title: Mali UNHCR Population Movements Feb 2012
+title: Mali UNHCR Conflict and Population Movements 2012
 categories: 
     - data
 geography: mali
