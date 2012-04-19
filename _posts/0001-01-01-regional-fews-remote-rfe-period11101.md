@@ -6,7 +6,7 @@ geography: regional
 partner: fews
 cat: remote
 year: 2012
-layer: fews-net.sahel-fewsnet-ref-period11101,devseed.sahel-africa-borders-land  
+layer: fews-net.sahel-fewsnet-remote-rfe-period11101,devseed.sahel-africa-borders-land  
 api:
 embed:
 source: <a href="http://fews.net">FEWS NET</a> 
