@@ -71,7 +71,7 @@ $(function() {
     function updateLayers() {
         layer = '';
         $('#sortable li a').each(function(i) {
-            if ($(this).hasClass('active')) {
+            if ($(this).hasClass('active') && this.id != '') {
                 if (layer == '') {
                     layer = this.id;
                 } else {
