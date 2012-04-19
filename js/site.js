@@ -352,7 +352,9 @@ $(function() {
             $(this).removeClass('active');
             $(this).parent().next().removeClass('active');
             if ($(this).prev().hasClass('active')) {
-                $('#offlayers').css('top',curTop);
+                setTimeout(function() {
+                    $('#offlayers').css('top',curTop);
+                }, 150);
             }
         } else {
             curTop = $('#offlayers').css('top');
@@ -362,8 +364,8 @@ $(function() {
             $(this).parent().next().addClass('active');
             if ($(this).prev().hasClass('active')) {
                 setTimeout(function() {
-                    $('#offlayers').css('top',$('#onlayers').height() + 175);
-                }, 100);
+                    $('#offlayers').css('top',$('#onlayers').height() + 20);
+                }, 150);
             }
         }
     });
