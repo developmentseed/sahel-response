@@ -10,7 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: auto;
   overflow: hidden;
-  background: #D0D0D0;
+  background: #f7f7f7;
   }
   
 /*-----------------------------------
@@ -205,17 +205,17 @@ a.logo {
   height: 50px;
   width: 50px;
   background: url(../images/sprite.png) 0 -20px no-repeat;
-  margin: 5px;
+  margin: 2px 5px;
   }
 .logo.fews {
   width: 118px;
   background-position: -120px -80px;
-  margin-left: 25px;
+  margin-left: 35px;
   }
 .logo.wb {
   width: 45px;
   background-position: -400px -20px;
-  margin-left: 30px;
+  margin-left: 35px;
   }
 .logo.gfdrr {
   width: 160px;
@@ -224,12 +224,12 @@ a.logo {
 .logo.ithaca {
   width: 53px;
   background-position: 0px -80px;
-  margin-left: 30px;
+  margin-left: 35px;
   }
 .logo.unchr {
   width:43px;
   background-position: -260px -200px;
-  margin-left:30px;
+  margin-left:35px;
   }
 .logo.unocha {
   width: 162px;
@@ -238,12 +238,12 @@ a.logo {
 .logo.ds {
   width: 132px;
   background-position: -60px -20px;
-  margin-left: 15px;
+  margin-left: 25px;
   }
 .logo.servir {
   width: 148px;
   background-position: -250px -150px;
-  margin-left: 25%;
+  margin-left: 28%;
   }
 #sidebar .panel p {
   font-size: 15px;
@@ -542,7 +542,7 @@ a.download:visited,
 .downloads span.icon.sqlite {
   background-position: -135px -185px;
   }
-.downloads span.icon.mbtile {
+.downloads span.icon.mbtiles {
   background-position: 0 -250px;
   }
 .button {
@@ -911,6 +911,7 @@ a.share:active {
   position:absolute;
   top:0px; left:0px; right:0px; bottom:0px;
   z-index:999999;
+  overflow-y: auto;
   }
 .about-modal h3 {
   margin-bottom: 10px;
@@ -936,7 +937,6 @@ a.share:active {
   box-shadow:rgba(0,0,0,0.1) 0px 1px 3px;
   -moz-box-shadow:rgba(0,0,0,0.1) 0px 1px 3px;
   -webkit-box-shadow:rgba(0,0,0,0.1) 0px 1px 3px;
-  overflow:hidden;
   }
 .about-modal a.about-close {
   position:absolute;
