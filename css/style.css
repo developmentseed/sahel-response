@@ -10,7 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: auto;
   overflow: hidden;
-  background: #222;
+  background: #f7f7f7;
   }
   
 /*-----------------------------------
@@ -53,7 +53,6 @@ input, textarea, select {
   left: 0;
   right: 0;
   height: 100%;
-  background: #f7f7f7;
   }
 #map-bg {
   z-index: -1;
