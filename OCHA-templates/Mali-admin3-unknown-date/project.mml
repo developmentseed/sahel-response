@@ -1,0 +1,41 @@
+{
+  "bounds": [
+    -13.0078,
+    9.8823,
+    4.5703,
+    25.1652
+  ],
+  "center": [
+    -4.7461,
+    17.4345,
+    5
+  ],
+  "format": "png",
+  "interactivity": {
+    "layer": "admin_lv3",
+    "template_teaser": "<div class = 'title-lgd>{{{nom}}}</div>"
+  },
+  "minzoom": 4,
+  "maxzoom": 10,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "geometry": "polygon",
+      "id": "admin_lv3",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jueyang/Dropbox/sahel-mapbox/UNOCHA/geometry-files/Mali/ocha-mali-admin3/ocha-mali-admin3.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "admin_lv3"
+    }
+  ],
+  "name": "Mali-admin3-unknown-date",
+  "description": "",
+  "attribution": "",
+  "legend": ""
+}

@@ -1,0 +1,49 @@
+{
+  "bounds": [
+    -1.2414,
+    11.4477,
+    16.6004,
+    24.4571
+  ],
+  "center": [
+    8.1629,
+    20.0662,
+    4
+  ],
+  "format": "png",
+  "interactivity": {
+    "layer": "admin_lv1",
+    "template_teaser": "<div class='int-data'>{{{A2NAMEE}}}</div>\n<div class='int-pcode'><span class='pcode-txt'>p-code: </span>{{{A2CODE}}}</div>\n",
+    "template_full": "",
+    "fields": [
+      "ADM2_NAME",
+      "ADM2_CODE"
+    ]
+  },
+  "minzoom": 4,
+  "maxzoom": 10,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "geometry": "polygon",
+      "id": "admin_lv1",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jueyang/Dropbox/sahel-mapbox/UNOCHA/geometry-files/Niger/ocha-niger-admin1/ocha-niger-admin1.shp",
+        "id": "admin_lv2",
+        "project": "Sahel-OCHA-template",
+        "srs": null
+      },
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "name": "admin_lv1"
+    }
+  ],
+  "name": "Niger, Adminstration Level 1, 2006",
+  "description": "",
+  "legend": "<div class='scale-lgd'>\n  <ul class='labels-lgd'>\n    <li><span style='color:rgb(0,0,0))'>○</span>Populated Places in Burkina Faso</li>\n  </ul>\n</div>\n<div class='source-lgd'>Source:<span class='source--lgd-text'>UNOCHA</span>\n</div>\n\n\n<style type='text/css'>\n  .wax-legend .title-lgd {\n    text-align: left;\n    margin-bottom: 5px;\n    font-weight: bold;\n    font-size: 90%;\n    }\n  .wax-legend .scale-lgd ul {\n    margin: 0;\n    margin-bottom: 5px;\n    padding: 0;\n    float: left;\n    list-style: none;\n    }\n  .wax-legend .scale-lgd ul li {\n    font-size: 80%;\n    list-style: none;\n    margin-left: 0;\n    line-height: 18px;\n    margin-bottom: 2px;\n    }\n  .wax-legend ul.labels-lgd li span {\n    float: left;\n    height: 16px;\n    width: 30px;\n    margin-right: 5px;\n    margin-left: 0;\n    }\n  .wax-legend ul li span {\n    display: block;\n    margin-left: 0;\n    }\n  .wax-legend .source-lgd {\n    font-size: 70%;\n    color: #999;\n    clear: both;\n    }\n  .wax-attribution a,\n  .wax-legend a {\n    color: #777;\n    }\n</style>",
+  "attribution": ""
+}

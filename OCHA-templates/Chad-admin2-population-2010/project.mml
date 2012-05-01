@@ -1,0 +1,53 @@
+{
+  "bounds": [
+    12.2607,
+    7.4496,
+    24.3018,
+    23.725
+  ],
+  "center": [
+    18.1934,
+    15.4113,
+    5
+  ],
+  "format": "png",
+  "interactivity": {
+    "fields": [
+      "departemen",
+      "total"
+    ],
+    "layer": "admin-pop",
+    "template_teaser": "<div class='int-title'>{{{departemen}}}</div>\n<div class='int-pcode'><span class='pcode-txt'>pcode: </span>{{{pcode}}}</div>\n<div class='int-data'>Population: <span class='int-num'>{{{total}}}</span></div>"
+  },
+  "minzoom": 4,
+  "maxzoom": 10,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "geometry": "polygon",
+      "Datasource": {
+        "type": "sqlite",
+        "file": "/Users/jueyang/Dropbox/sahel-mapbox/UNOCHA/geometry-files/Chad/ocha-chad-admin2-population/ocha-chad-admin2-population-merc.sqlite",
+        "table": "(select *, cast(totale as real) as total from ocha_chad_admin2_population_merc)",
+        "attachdb": "",
+        "extent": "",
+        "id": "admin-pop",
+        "project": "Chad-admin2-population-2010",
+        "srs": null
+      },
+      "id": "admin-pop",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "name": "admin-pop"
+    }
+  ],
+  "name": "Chad-admin2-population-2010",
+  "description": "",
+  "legend": "<div class='title-lgd'>Chad Population by Admin Level 2 (in thousands)</div>\n<div class='scale-lgd'>\n  <ul class='labels-lgd'>\n    <li><span style='background:#e3e3e3;'></span><10</li>\n    <li><span style='background:#c9c9c9;'></span>60</li>\n    <li><span style='background:#aaaaaa;'></span>110</li>\n    <li><span style='background:#919191;'></span>160</li>\n    <li><span style='background:#797979;'></span>210</li>\n    <li><span style='background:#656565;'></span>260</li>\n    <li><span style='background:#525252;'></span>310</li>\n    <li><span style='background:#404040;'></span>360</li>\n    <li><span style='background:#272727;'></span>>360</li>\n    <li><span style='background:#ff0000;'></span>1000</li>\n  </ul>\n</div>\n<div class='source-lgd'>Source:<span class='source-lgd-text'>UNOCHA (2010)</span>\n</div>\n</div>\n\n<style type='text/css'>\n \n.wax-legend {\n  max-width:800px;\n }\n  .wax-legend .title-lgd {\n    text-align: left;\n    margin-bottom: 5px;\n    font-weight: bold;\n    font-size: 90%;\n    }\n\n  .wax-legend .scale-lgd ul {\n    margin: 0;\n    padding: 0;\n    float: left;\n    list-style: none;\n    \n    }\n  .wax-legend .scale-lgd ul li {\n      display: block;\n    float: left;\n    width: 40px;\n    margin-bottom: 6px;\n    text-align: center;\n    font-size: 80%;\n    list-style: none;\n    }\n  .wax-legend ul.labels-lgd li span {\n    height: 16px;\n    width: 40px;\n    border: 1px solid #999;\n    }\n  .wax-legend ul li span {\n    display: block;\n    float:left;\n    }\n  .wax-legend .source-lgd {\n    font-size: 70%;\n    color: #999;\n    clear: both;\n    }\n  .wax-attribution a,\n  .wax-legend a {\n    color: #777;\n    }\n</style>",
+  "attribution": "",
+  "version": "2.0.0"
+}
