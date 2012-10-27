@@ -265,6 +265,7 @@ $(function() {
         axis: 'y',
         containment:'parent',
         tolerance: 'pointer',
+        helper: 'clone',
         update: function() {
             updateLayers();
             updateEmbedApi();
