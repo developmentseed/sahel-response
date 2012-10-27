@@ -207,15 +207,20 @@ a.logo {
   background: url(../images/sprite.png) 0 -20px no-repeat;
   margin: 2px 5px;
   }
+.logo.wfp {
+  width:50px;
+  background-position: 0px -20px;
+  margin-left:35px;
+}
 .logo.fews {
   width: 118px;
   background-position: -120px -80px;
-  margin-left: 35px;
+  margin-left: 25px;
   }
 .logo.wb {
   width: 45px;
   background-position: -400px -20px;
-  margin-left: 35px;
+  margin-left: 45px;
   }
 .logo.gfdrr {
   width: 160px;
@@ -224,13 +229,9 @@ a.logo {
 .logo.ithaca {
   width: 53px;
   background-position: 0px -80px;
-  margin-left: 35px;
+  margin-left: 40px;
   }
-.logo.unchr {
-  width:43px;
-  background-position: -260px -200px;
-  margin-left:35px;
-  }
+
 .logo.unocha {
   width: 162px;
   background-position: -210px -20px;
@@ -243,7 +244,11 @@ a.logo {
 .logo.servir {
   width: 148px;
   background-position: -250px -150px;
-  margin-left: 28%;
+  }
+.logo.unchr {
+  width:130px;
+  background-position: -260px -215px;
+  margin-left:35px;
   }
 #sidebar .panel p {
   font-size: 15px;
